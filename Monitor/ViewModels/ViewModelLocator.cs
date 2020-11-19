@@ -14,6 +14,9 @@ namespace Monitor.ViewModels
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
             var service = SimpleIoc.Default;
+            service.Register<MainWindowViewModel>();
         }
+
+        public MainWindowViewModel MainWindowViewModel { get => ServiceLocator.Current.GetInstance<MainWindowViewModel>(); }
     }
 }
